@@ -2,10 +2,16 @@
 This project is to tested basic device communication using MQTT for CEPT IoT intern practice.
 
 This tutorial was created by Patchapong Kulthumrongkul patchapong.k@chula.ac.th
+
 Center of Excellence in Electrical Power Technology, Chulalongkorn University, Thailand
 
+## Overview
+We will establish an MQTT connection using NETPIE as the MQTT broker and Postman as the MQTT client. The clients are simulated to exchange data via the MQTT protocol, which follows a publish-subscribe architecture based on topics. Only clients that subscribe to a specific topic will receive the payload published to that topic. In the following steps, you will connect the MQTT client to NETPIE.
+
+![alt text](./assets/image-0.png)
+
 ## Getting start on NETPIE
-sign up on https://auth.netpie.io/signup > Activate Account > Login at https://auth.netpie.io/login
+Sign up on https://auth.netpie.io/signup > Activate Account > Login at https://auth.netpie.io/login
 
 Add new project
 ![alt text](./assets/image-12.png)
