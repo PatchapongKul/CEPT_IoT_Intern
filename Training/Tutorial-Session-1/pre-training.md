@@ -1,6 +1,7 @@
-# IoT Stack Implementation
+# IoT Stack Integration: Hands-On Practice for Interns
 
-The goal of this tutorial is to understand how each stack of IoT system can be integrated with each other including Data Acquisition, Database, Backend, Frontend for CEPT IoT intern practice.
+The goal of this tutorial is to help participants understand how the main components of an IoT system—Data Acquisition, Message Communication, Backend Processing, Database Storage, and Data Visualization—can work together as an integrated system.
+Through hands-on practice, interns will learn how data flows from sensors to dashboards and gain practical experience in implementing and connecting each part of the IoT stack.
 
 Center of Excellence in Electrical Power Technology, Chulalongkorn University, Thailand
 
@@ -23,10 +24,11 @@ The frontend dashboard queries the database and visualizes the data. This interf
 
 ## Preparation Before the Session
 
-**Please bring your laptop to the session — it will be hands-on. Make sure to install the following dependencies in advance:**
+Please bring your **laptop and USB-C Data Cable** to the session — it will be hands-on. Make sure to install the following dependencies in advance:
 
-1. **Docker Desktop:** [Download here](https://www.docker.com/products/docker-desktop/)  
-2. **Arduino IDE:** [Installation guide](https://docs.arduino.cc/software/ide-v2/tutorials/getting-started/ide-v2-downloading-and-installing/)  
-3. **Visual Studio Code (VS Code):** [Download here](https://code.visualstudio.com/download)  
-4. **Python Setup in VS Code:** Ensure Python is installed and properly set up in VS Code. Follow this [guide](https://code.visualstudio.com/docs/languages/python#_install-python-and-the-python-extension)  
-5. **Postman:** Make sure Postman is installed. (It should already be installed if you’ve tried this step earlier: [MQTT Experiment](https://github.com/PatchapongKul/CEPT_IoT_Intern/blob/main/Training/MQTT/training.md))
+1. **Install Git**: [Download here](https://git-scm.com/downloads)  
+2. **Install Docker Desktop:** [Download here](https://www.docker.com/products/docker-desktop/)  
+3. **Install Arduino IDE:** [Installation guide](https://docs.arduino.cc/software/ide-v2/tutorials/getting-started/ide-v2-downloading-and-installing/)  
+4. **Install Visual Studio Code (VS Code):** [Download here](https://code.visualstudio.com/download)  
+5. **Python Setup in VS Code:** Ensure Python is installed and properly set up in VS Code. Follow this [guide](https://code.visualstudio.com/docs/languages/python#_install-python-and-the-python-extension)  
+6. **Postman:** Make sure Postman is installed. (It should already be installed if you’ve tried this step earlier: [MQTT Experiment](https://github.com/PatchapongKul/CEPT_IoT_Intern/blob/main/Training/MQTT/training.md))
