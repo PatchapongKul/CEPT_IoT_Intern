@@ -1,0 +1,27 @@
+# Use an official slimmed-down Python image as the base
+FROM python:3.11-slim
+
+# Set environment variables
+# Prevent Python from writing .pyc files to disk (keeps container clean)
+ENV PYTHONDONTWRITEBYTECODE=1
+
+# Force Python to flush output (useful for logging in Docker)
+ENV PYTHONUNBUFFERED=1
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the requirements file into the container
+COPY requirements.txt /app/
+
+# Install Python dependencies without caching to reduce image size
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the rest of the project files into the container
+COPY . /app/
+
+# Expose the port Flask runs on (default is 5000)
+EXPOSE 5000
+
+# Default command to run the Flask app
+CMD ["python", "app.py"]
