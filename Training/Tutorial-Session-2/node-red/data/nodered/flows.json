@@ -1,0 +1,842 @@
+[
+    {
+        "id": "45efb3ed7a4b1544",
+        "type": "tab",
+        "label": "Example",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "f3039d0aed1025f9",
+        "type": "mqtt-broker",
+        "name": "NETPIE Publisher",
+        "broker": "broker.netpie.io",
+        "port": 1883,
+        "clientid": "CLIENT ID",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "4ae6e7e3cb0708bf",
+        "type": "mqtt-broker",
+        "name": "MQTT Subscriber",
+        "broker": "broker.netpie.io",
+        "port": 1883,
+        "clientid": "CLIENT ID",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "fbed7c979844370e",
+        "type": "postgreSQLConfig",
+        "name": "TimescaleDB",
+        "host": "IP ADDRESS",
+        "hostFieldType": "str",
+        "port": "30000",
+        "portFieldType": "num",
+        "database": "postgres",
+        "databaseFieldType": "str",
+        "ssl": "false",
+        "sslFieldType": "bool",
+        "applicationName": "",
+        "applicationNameType": "str",
+        "max": 10,
+        "maxFieldType": "num",
+        "idle": 1000,
+        "idleFieldType": "num",
+        "connectionTimeout": 10000,
+        "connectionTimeoutFieldType": "num",
+        "user": "postgres",
+        "userFieldType": "str",
+        "password": "password",
+        "passwordFieldType": "str"
+    },
+    {
+        "id": "7050493fa083e7f2",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "6210cbc8541043f2",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "f73ad5cb7e6432b5",
+        "type": "ui_group",
+        "name": "Dashboard",
+        "tab": "7050493fa083e7f2",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "9e7b6c0057abf045",
+        "type": "inject",
+        "z": "45efb3ed7a4b1544",
+        "name": "Sensor Data",
+        "props": [
+            {
+                "p": "payload.time",
+                "v": "iso",
+                "vt": "date"
+            },
+            {
+                "p": "payload.sensor_id",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "p": "payload.temp",
+                "v": "$round($random() * 10 + 20,2)",
+                "vt": "jsonata"
+            },
+            {
+                "p": "payload.humid",
+                "v": "$round($random() * 20) + 50",
+                "vt": "jsonata"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 190,
+        "y": 120,
+        "wires": [
+            [
+                "90d2d456cea9bd58",
+                "ebd2c52f2bd8ca9c"
+            ]
+        ]
+    },
+    {
+        "id": "90d2d456cea9bd58",
+        "type": "debug",
+        "z": "45efb3ed7a4b1544",
+        "name": "Published Payload",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 490,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "ebd2c52f2bd8ca9c",
+        "type": "mqtt out",
+        "z": "45efb3ed7a4b1544",
+        "name": "MQTT Publisher",
+        "topic": "@msg/data",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "f3039d0aed1025f9",
+        "x": 480,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "4d48ede1b3c7abfb",
+        "type": "mqtt in",
+        "z": "45efb3ed7a4b1544",
+        "name": "MQTT Subscriber",
+        "topic": "@msg/data",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "4ae6e7e3cb0708bf",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 180,
+        "y": 280,
+        "wires": [
+            [
+                "728a6af73c934f50",
+                "a7439face48a9a24"
+            ]
+        ]
+    },
+    {
+        "id": "728a6af73c934f50",
+        "type": "debug",
+        "z": "45efb3ed7a4b1544",
+        "name": "Subscribed Payload",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 540,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "a7439face48a9a24",
+        "type": "function",
+        "z": "45efb3ed7a4b1544",
+        "name": "format data",
+        "func": "msg.params = [\n    msg.payload.time,\n    msg.payload.sensor_id,\n    msg.payload.temp,\n    msg.payload.humid\n]\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 370,
+        "y": 360,
+        "wires": [
+            [
+                "d990d6d962a11dd4"
+            ]
+        ]
+    },
+    {
+        "id": "d990d6d962a11dd4",
+        "type": "postgresql",
+        "z": "45efb3ed7a4b1544",
+        "name": "Insert DB",
+        "query": "INSERT INTO sensor_data (time, sensor_id, temperature, humidity) VALUES\n(\n    $1,$2,$3,$4\n)",
+        "postgreSQLConfig": "fbed7c979844370e",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 580,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "585125071bfa9942",
+        "type": "inject",
+        "z": "45efb3ed7a4b1544",
+        "name": "Start Querying",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 460,
+        "wires": [
+            [
+                "94c367881d452a88"
+            ]
+        ]
+    },
+    {
+        "id": "94c367881d452a88",
+        "type": "postgresql",
+        "z": "45efb3ed7a4b1544",
+        "name": "Select DB",
+        "query": "SELECT * from sensor_data;",
+        "postgreSQLConfig": "fbed7c979844370e",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 380,
+        "y": 460,
+        "wires": [
+            [
+                "0fc6757b6fe8c517",
+                "69796515e7657429",
+                "9fdbad07b2559068",
+                "8081e470af0bfc14"
+            ]
+        ]
+    },
+    {
+        "id": "0fc6757b6fe8c517",
+        "type": "debug",
+        "z": "45efb3ed7a4b1544",
+        "name": "Read DB",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "69796515e7657429",
+        "type": "function",
+        "z": "45efb3ed7a4b1544",
+        "name": "Extract Temperature",
+        "func": "let lastItem = msg.payload[msg.payload.length - 1];\nmsg.payload = lastItem.temperature;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 540,
+        "wires": [
+            [
+                "8b8629d9fc6e4c93"
+            ]
+        ]
+    },
+    {
+        "id": "9fdbad07b2559068",
+        "type": "function",
+        "z": "45efb3ed7a4b1544",
+        "name": "Extract Humidity",
+        "func": "let lastItem = msg.payload[msg.payload.length - 1];\nmsg.payload = lastItem.humidity;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 600,
+        "wires": [
+            [
+                "5dea5c4d266228a0"
+            ]
+        ]
+    },
+    {
+        "id": "a1cef1a3ec6b951e",
+        "type": "http in",
+        "z": "45efb3ed7a4b1544",
+        "name": "User API",
+        "url": "/users",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 160,
+        "y": 740,
+        "wires": [
+            [
+                "a40ee055a397ca42"
+            ]
+        ]
+    },
+    {
+        "id": "a40ee055a397ca42",
+        "type": "function",
+        "z": "45efb3ed7a4b1544",
+        "name": "User Page",
+        "func": "msg.payload = { message: \"Hello from Node-RED! This is user page.\" };\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 370,
+        "y": 740,
+        "wires": [
+            [
+                "5d798d82f7292da1"
+            ]
+        ]
+    },
+    {
+        "id": "5d798d82f7292da1",
+        "type": "http response",
+        "z": "45efb3ed7a4b1544",
+        "name": "User API response",
+        "statusCode": "",
+        "headers": {},
+        "x": 610,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "12e89cd6a847c00d",
+        "type": "http in",
+        "z": "45efb3ed7a4b1544",
+        "name": "Data API",
+        "url": "/data",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 160,
+        "y": 820,
+        "wires": [
+            [
+                "be58e16451fe6fcf"
+            ]
+        ]
+    },
+    {
+        "id": "8cafb036e36cc752",
+        "type": "http response",
+        "z": "45efb3ed7a4b1544",
+        "name": "Data API response",
+        "statusCode": "",
+        "headers": {},
+        "x": 610,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "be58e16451fe6fcf",
+        "type": "postgresql",
+        "z": "45efb3ed7a4b1544",
+        "name": "Select DB",
+        "query": "SELECT * from sensor_data;",
+        "postgreSQLConfig": "fbed7c979844370e",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 360,
+        "y": 820,
+        "wires": [
+            [
+                "8cafb036e36cc752"
+            ]
+        ]
+    },
+    {
+        "id": "35c154c5592554a0",
+        "type": "function",
+        "z": "45efb3ed7a4b1544",
+        "name": "dict to list",
+        "func": "let times = [];\nlet temps = [];\n\nfor (let row of msg.payload) {\n    times.push(row.time);\n    temps.push(row.temperature);\n}\n\nmsg.payload = {\n    time: times,\n    temperature: temps\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 920,
+        "wires": [
+            [
+                "7052a74fa534fa9c"
+            ]
+        ]
+    },
+    {
+        "id": "42a1cd517c1560cc",
+        "type": "postgresql",
+        "z": "45efb3ed7a4b1544",
+        "name": "Select DB",
+        "query": "SELECT * from sensor_data;",
+        "postgreSQLConfig": "fbed7c979844370e",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 340,
+        "y": 920,
+        "wires": [
+            [
+                "35c154c5592554a0"
+            ]
+        ]
+    },
+    {
+        "id": "1b654d7a99f7178d",
+        "type": "http in",
+        "z": "45efb3ed7a4b1544",
+        "name": "Data API",
+        "url": "/data/list",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 160,
+        "y": 920,
+        "wires": [
+            [
+                "42a1cd517c1560cc"
+            ]
+        ]
+    },
+    {
+        "id": "7052a74fa534fa9c",
+        "type": "http response",
+        "z": "45efb3ed7a4b1544",
+        "name": "Data API response",
+        "statusCode": "",
+        "headers": {},
+        "x": 750,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "4972cb4d6dcdbaa1",
+        "type": "http in",
+        "z": "45efb3ed7a4b1544",
+        "name": "Data API",
+        "url": "/data/recent",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 140,
+        "y": 1020,
+        "wires": [
+            [
+                "851fbf5ebcb3b7ad"
+            ]
+        ]
+    },
+    {
+        "id": "fd19166fb139ad12",
+        "type": "postgresql",
+        "z": "45efb3ed7a4b1544",
+        "name": "Select DB",
+        "query": "SELECT {{{msg.payload.columns}}}\nFROM sensor_data\nWHERE time > now() - interval '{{{msg.payload.interval}}}'\nORDER BY time DESC;",
+        "postgreSQLConfig": "fbed7c979844370e",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 340,
+        "y": 1020,
+        "wires": [
+            [
+                "0d9c960ef40f26b8"
+            ]
+        ]
+    },
+    {
+        "id": "0d9c960ef40f26b8",
+        "type": "function",
+        "z": "45efb3ed7a4b1544",
+        "name": "dict to list",
+        "func": "// Initialize output\nlet output = {};\n\n// Loop through rows\nfor (let row of msg.payload) {\n    for (let key in row) {\n        if (!output[key]) {\n            output[key] = [];\n        }\n        output[key].push(row[key]);\n    }\n}\n\nmsg.payload = output;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 1020,
+        "wires": [
+            [
+                "80b7ccbc9f9313c0"
+            ]
+        ]
+    },
+    {
+        "id": "80b7ccbc9f9313c0",
+        "type": "http response",
+        "z": "45efb3ed7a4b1544",
+        "name": "Data API response",
+        "statusCode": "",
+        "headers": {},
+        "x": 750,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "851fbf5ebcb3b7ad",
+        "type": "function",
+        "z": "45efb3ed7a4b1544",
+        "name": "Select Column",
+        "func": "// Whitelist allowed columns (for example)\nconst allowedColumns = ['temperature', 'humidity', 'sensor_id', 'time'];\n\n// Filter and join requested columns safely\nlet columns = msg.payload.parameter || [];\ncolumns = columns.filter(c => allowedColumns.includes(c));\n\n// Always include time first\ncolumns = ['time', ...columns];\n\nmsg.payload.columns = columns.join(', ')\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 240,
+        "y": 1100,
+        "wires": [
+            [
+                "fd19166fb139ad12"
+            ]
+        ]
+    },
+    {
+        "id": "8081e470af0bfc14",
+        "type": "function",
+        "z": "45efb3ed7a4b1544",
+        "name": "Extract Time",
+        "func": "let lastItem = msg.payload[msg.payload.length - 1];\nmsg.payload = lastItem.time;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 610,
+        "y": 660,
+        "wires": [
+            [
+                "5978070464009702"
+            ]
+        ]
+    },
+    {
+        "id": "5c421b797473a2ff",
+        "type": "ui_button",
+        "z": "45efb3ed7a4b1544",
+        "name": "",
+        "group": "f73ad5cb7e6432b5",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Update",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 180,
+        "y": 520,
+        "wires": [
+            [
+                "94c367881d452a88"
+            ]
+        ]
+    },
+    {
+        "id": "8b8629d9fc6e4c93",
+        "type": "ui_gauge",
+        "z": "45efb3ed7a4b1544",
+        "name": "",
+        "group": "f73ad5cb7e6432b5",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperature",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "50",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 850,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "5dea5c4d266228a0",
+        "type": "ui_gauge",
+        "z": "45efb3ed7a4b1544",
+        "name": "",
+        "group": "f73ad5cb7e6432b5",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Humidity",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 840,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "5978070464009702",
+        "type": "ui_text",
+        "z": "45efb3ed7a4b1544",
+        "group": "f73ad5cb7e6432b5",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Time",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 830,
+        "y": 660,
+        "wires": []
+    }
+]

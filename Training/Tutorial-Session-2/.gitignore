@@ -1,2 +1,3 @@
-node-red/data
+node-red/data/grafana/
+node-red/data/nodered/node_modules/.bin
 Tutorial-2.pptx
