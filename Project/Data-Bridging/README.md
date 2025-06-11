@@ -4,7 +4,7 @@ This project is designed to bridge data from OpenHistorian to Redpanda, specific
 ## Overview
 The data bridging process involves extracting PMU data from OpenHistorian, transforming it into a suitable format, and then loading it into Redpanda for real-time analytics and processing.
 
-![Overview Diagram](./Assets/overview_diagram.png)
+![Overview Diagram](./Assets/overview.png)
 ## Phasor measurement unit (PMU)
 PMUs are devices used to measure the electrical waves on an electricity grid. They provide real-time data on the grid's status, which is crucial for monitoring and managing the grid effectively.
 
