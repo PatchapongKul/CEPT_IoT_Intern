@@ -1,1 +1,1 @@
-# Data Bridging from OpenHistorian to Apache Kafka
+# Data Bridging from OpenHistorian to Redpanda
