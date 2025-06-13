@@ -1,19 +1,31 @@
-# Data Bridging from OpenHistorian to Redpanda
-This project is designed to bridge data from OpenHistorian to Redpanda, specifically focusing on phasor measurement unit (PMU) data. The goal is to facilitate the transfer and processing of PMU data in a real-time streaming environment.
+# Data Bridging from PMUs to Redpanda
+This project is designed to bridge data from phasor measurement units (PMUs) to Redpanda. The goal is to facilitate the transfer and processing of PMU data in a real-time streaming environment.
 
 ## Overview
-The data bridging process involves extracting PMU data from OpenHistorian, transforming it into a suitable format, and then loading it into Redpanda for real-time analytics and processing.
+The data bridging process involves extracting PMU data, transforming it into a suitable format, and then loading it into Redpanda for real-time analytics and processing.
 
 ![Overview Diagram](./Assets/overview.png)
 
-## Phasor measurement unit (PMU)
-PMUs are devices used to measure the electrical parameters on an electricity grid. They provide real-time data on the grid's status, which is crucial for monitoring and managing the grid effectively.
+- **Phasor Measurement Unit (PMU)**: A device used to measure the electrical parameters on an electricity grid in real-time data. It sends data over the network in C37.118 format.
 
-## OpenHistorian2
-OpenHistorian2 is an open-source time-series data historian designed for high-performance data ingestion and retrieval. It includes protocol parser using to decode IEEE C37.118.
+- **Phasor Data Concentrator (PDC)**: A system that collects data from multiple PMUs and aggregates it for further processing or transmission.
 
-## Redpanda
-Redpanda is a high-performance streaming platform that is compatible with Apache Kafka. It is designed for real-time data processing and can handle large volumes of data with low latency.
+- **Redpanda**: A high-performance streaming platform that is designed for real-time data processing.
 
-## TimescaleDB
-TimescaleDB is a time-series database built on PostgreSQL. It is optimized for storing and querying time-series data, making it a suitable choice for applications that require historical data analysis alongside real-time processing.
+- **TimescaleDB**: A time-series database built on PostgreSQL that is suitable for real-time data ingestion and querying.
+
+## Study Guideline
+To effectively implement the data bridging project, you should review the following topics:
+
+### 1. Basic Networking
+- Understand how IP addressing works.
+- Understand about port numbers and their significance in network communication.
+
+### 2. Docker
+- Understand how to build Docker images for your applications.
+- Understand how to create Docker containers (including port exposure).
+
+### 3. Other
+- Python programming
+- Docker Compose
+- Basic SQL queries (optional)
