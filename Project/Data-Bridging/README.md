@@ -4,7 +4,7 @@ This project is designed to bridge data from phasor measurement units (PMUs) to 
 ## Overview
 The data bridging process involves extracting PMU data, transforming it into a suitable format, and then loading it into Redpanda for real-time analytics and processing.
 
-![Overview Diagram](./Assets/overview.png)
+![Overview Diagram](./Assets/Overview.png)
 
 - **Phasor Measurement Unit (PMU)**: A device used to measure the electrical parameters on an electricity grid in real-time data. It sends data over the network in C37.118 format.
 
