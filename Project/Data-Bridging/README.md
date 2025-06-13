@@ -29,3 +29,13 @@ To effectively implement the data bridging project, you should review the follow
 - Python programming
 - Docker Compose
 - Basic SQL queries (optional)
+
+## Useful Resources
+
+### 1. **PMU and PDC simulation (GitHub)**  
+[pyPMU](https://github.com/umthana/pypmu)\
+Example of a PMU and PDC simulation in Python. This can be used to generate sample PMU data for testing the data bridging process.
+
+### 2. **Redpanda Example (GitHub)**  
+[Redpanda](https://github.com/umthana/2023-python-gsg)\
+Example of a Redpanda Docker Compose and Python script to produce and consume messages.
