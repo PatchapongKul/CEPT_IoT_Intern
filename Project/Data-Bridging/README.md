@@ -1,6 +1,11 @@
 # Data Bridging from PMUs to Redpanda
 This project is designed to bridge data from phasor measurement units (PMUs) to Redpanda. The goal is to facilitate the transfer and processing of PMU data in a real-time streaming environment.
 
+## Group Members
+- Yeepun
+- Hima
+- Punsai
+
 ## Overview
 The data bridging process involves extracting PMU data, transforming it into a suitable format, and then loading it into Redpanda for real-time analytics and processing.
 
