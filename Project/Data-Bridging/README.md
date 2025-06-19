@@ -30,7 +30,20 @@ To effectively implement the data bridging project, you should review the follow
 - Understand how to build Docker images for your applications.
 - Understand how to create Docker containers (including port exposure).
 
-### 3. Other
+### 3. Phasor Measurement Unit (PMU)
+- Understand the basics of PMUs and their role in power systems.
+- Understand the different between Energy Monitoring Unit (EMU) and PMU.
+- Familiarize yourself with the C37.118 protocol for PMU data.
+
+### 4. Phasor Data Concentrator (PDC)
+- Understand the role of PDC in collecting and aggregating PMU data.
+
+### 5. Redpanda
+- Understand the difference between publish/subscribe and client/server communication model.
+- Understand the difference between Redpanda and MQTT.
+- Understand its role in real-time data streaming.
+
+### 6. Other
 - Python programming
 - Docker Compose
 - Basic SQL queries (optional)
