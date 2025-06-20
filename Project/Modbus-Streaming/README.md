@@ -4,7 +4,10 @@
 This project demonstrates how to implement real-time data streaming using the **Modbus RTU** protocol with an **ESP32** microcontroller. The system collects power and energy consumption data from a **PZEM-016** energy meter and sends it to a database for logging and visualization.
 
 ![alt text](Assets/image.png)
-
+# Member
+- acare
+- plaak
+- taipan
 ---
 
 ## 🔧 Key Components
