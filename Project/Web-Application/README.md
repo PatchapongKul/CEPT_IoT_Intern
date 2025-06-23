@@ -11,6 +11,13 @@ To achieve this, the application consists of a well-structured **frontend** and 
 
 ![alt text](Assets/image.png)
 
+## Member
+- Phattiran Krusatayanon
+- Benyapa Cheewachuen
+- Nonthapat Mahapromrak
+- Metheewat Monthatip
+- Manatnatee Chusap
+
 ### 📊 Key Features
 - **Real-Time Data Monitoring**: Uses WebSocket to push live grid metrics to the frontend with minimal latency.
 - **Historical Data Access**: Exposes RESTful API endpoints to retrieve and visualize historical grid data.
@@ -32,3 +39,4 @@ To achieve this, the application consists of a well-structured **frontend** and 
 ## 📚 Useful Resources
 
 1. Explore the official documentation and beginner tutorials to get started with [Express.js](https://expressjs.com/) and [React.js](https://react.dev/), and look for introductory YouTube videos on building basic Express and React applications.
+

@@ -20,6 +20,13 @@ To integrate air conditioning units into a local **Energy Management System (EMS
 
 ---
 
+## Member Name
+- Phattiran Krusatayanon
+- Benyapa Cheewachuen
+- Nontapat Mahapromrak
+- Metheewat Monthatip
+- Manatnatee Chusap
+
 ## 📘 Study Guideline
 
 To effectively implement and maintain the system, the following questions and topics should be studied:
