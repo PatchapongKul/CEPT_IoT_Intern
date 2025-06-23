@@ -11,7 +11,7 @@ To achieve this, the application consists of a well-structured **frontend** and 
 
 ![alt text](Assets/image.png)
 
-## Member
+## Member Name
 - Phattiran Krusatayanon
 - Benyapa Cheewachuen
 - Nonthapat Mahapromrak
