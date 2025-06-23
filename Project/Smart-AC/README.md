@@ -20,7 +20,7 @@ To integrate air conditioning units into a local **Energy Management System (EMS
 
 ---
 
-## Member
+## Member Name
 - Phattiran Krusatayanon
 - Benyapa Cheewachuen
 - Nontapat Mahapromrak
