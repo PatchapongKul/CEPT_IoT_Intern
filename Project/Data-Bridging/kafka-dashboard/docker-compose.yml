@@ -1,0 +1,42 @@
+#version: '3.8'
+
+services:
+  # PMU Dashboard Backend
+  pmu-backend:
+    build: ./backend
+    container_name: pmu-backend
+    environment:
+      - KAFKA_BROKER=${KAFKA_BROKER}:9092 #${KAFKA_BROKER} 192.168.38.136
+      - PORT=3001
+      - NODE_ENV=development
+    ports:
+      - "3001:3001"
+    networks:
+      - pmu-network
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+
+  # PMU Dashboard Frontend
+  pmu-frontend:
+    build: ./frontend
+    container_name: pmu-frontend
+    environment:
+      - REACT_APP_BACKEND_URL=http://localhost:3001
+      - REACT_APP_WS_URL=ws://localhost:3001
+    ports:
+      - "3000:3000"
+    depends_on:
+      - pmu-backend
+    networks:
+      - pmu-network
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+
+volumes:
+  redpanda_data:
+
+networks:
+  pmu-network:
+    driver: bridge
