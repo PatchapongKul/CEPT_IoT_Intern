@@ -1,0 +1,18 @@
+.card {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+}
+
+.table td, .table th {
+  vertical-align: middle;
+}
+
+.custom-header-solar {
+  background-color: #f58b05 !important;
+  color: white !important;
+  font-weight: bold;
+}
+
+.custom-thead-solar th {
+  background-color: #7fbbdd !important;
+  color: white;
+}

@@ -1,0 +1,15 @@
+.chart-container {
+  width: 100%;
+  height: 300px;
+}
+
+.card {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.custom-header-energy {
+  background-color: #7fbbdd !important; /* หรือรหัส HEX ที่คุณต้องการ */
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
