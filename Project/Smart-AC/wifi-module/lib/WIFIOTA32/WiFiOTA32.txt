@@ -1,0 +1,101 @@
+#include "WiFiOTA32.h"
+
+WiFiClient espClient;
+PubSubClient mqttClient(espClient);
+
+WiFiOTA::WiFiOTA(const char *ssid, const char *password,
+                 IPAddress logTarget, uint16_t logPort, const char *hostname)
+    : _ssid(ssid), _password(password),
+      _logTarget(logTarget), _logPort(logPort), _hostname(hostname) {}
+
+void WiFiOTA::begin()
+{
+    setupWiFi();
+    setupOTA();
+}
+
+void WiFiOTA::handle()
+
+{
+    ArduinoOTA.handle();
+    mqttClient.loop();
+}
+
+void WiFiOTA::setupWiFi()
+{
+    WiFi.mode(WIFI_STA);
+    WiFi.begin(_ssid, _password);
+    WiFi.setHostname(_hostname);
+
+    while (WiFi.status() != WL_CONNECTED)
+    {
+        delay(500);
+        Serial.print(".");
+    }
+
+    Serial.println("\n✅ WiFi connected!");
+    Serial.print("IP address: ");
+    Serial.println(WiFi.localIP());
+}
+
+void WiFiOTA::setupOTA()
+{
+    ArduinoOTA.setHostname(_hostname);
+
+    ArduinoOTA
+        .onStart([]()
+                 { Serial.println("📦 OTA Start"); })
+        .onEnd([]()
+               { Serial.println("\n✅ OTA End"); })
+        .onProgress([](unsigned int progress, unsigned int total)
+                    { Serial.printf("📶 OTA Progress: %u%%\r", (progress / (total / 100))); })
+        .onError([](ota_error_t error)
+                 {
+      Serial.printf("❌ OTA Error[%u]: ", error);
+      if (error == OTA_AUTH_ERROR) Serial.println("Auth Failed");
+      else if (error == OTA_BEGIN_ERROR) Serial.println("Begin Failed");
+      else if (error == OTA_CONNECT_ERROR) Serial.println("Connect Failed");
+      else if (error == OTA_RECEIVE_ERROR) Serial.println("Receive Failed");
+      else if (error == OTA_END_ERROR) Serial.println("End Failed"); });
+
+    ArduinoOTA.begin();
+    Serial.println("🚀 OTA Ready");
+}
+
+void WiFiOTA::set_callback(void (*callback)(char *, byte *, unsigned int))
+{
+    mqttClient.setCallback(callback);
+}
+
+void WiFiOTA::setupMQTT(const char *mqtt_server, const int mqtt_port)
+{
+    mqttClient.setServer(mqtt_server, mqtt_port);
+    Serial.println("🔌 MQTT client configured");
+}
+
+void WiFiOTA::handleMQTT()
+{
+    if (!mqttClient.connected())
+    {
+        Serial.println("🔁 Reconnecting to MQTT...");
+        String clientId = String(_hostname) + "-client";
+        if (mqttClient.connect(clientId.c_str()))
+        {
+            Serial.println("✅ MQTT connected");
+            mqttClient.subscribe("esp01/hvac/set");
+        }
+        else
+        {
+            Serial.print("❌ MQTT failed, rc=");
+            Serial.print(mqttClient.state());
+            Serial.println(" try again in 5 seconds");
+            delay(5000);
+        }
+    }
+    mqttClient.loop();
+}
+
+void WiFiOTA::publishMQTT(const char *topic, const String &payload)
+{
+    mqttClient.publish(topic, payload.c_str());
+}
