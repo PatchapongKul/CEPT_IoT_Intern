@@ -4,19 +4,13 @@
 #include "secrets.h"
 #include <ArduinoJson.h>
 
+#define HVAC_RX D6
+#define HVAC_TX D5
+
 WiFiOTA wifi_ota(ssid, password, logTarget, logPort, hostname);
 
-ToshibaCarrierHvac hvac(&Serial);
-hvacSettings myPreset{
-    "on",    // State ["off", "on"]
-    25,      // Setpoint [16-30c]
-    "cool",  // Mode ["auto", "cool", "dry", "fan_only"]
-    "on",    // Swing ["off", "on"]
-    "lvl_3", // Fan mode ["quiet", "lvl_1", "lvl_2", "lvl_3", "lvl_4", "lvlL_5", "auto"]
-    "off",   // Pure ["off", "on"]
-    "100%",  // Power select ["50%", "75%", "100%"]
-    "normal" // Operation ["normal", "high_power", "silent_1", "eco", "silent_2"]
-};
+// ToshibaCarrierHvac hvac(&Serial);
+ToshibaCarrierHvac hvac(HVAC_RX, HVAC_TX);
 
 void mqtt_callback(char *topic, byte *payload, unsigned int length)
 {
@@ -79,17 +73,13 @@ void mqtt_callback(char *topic, byte *payload, unsigned int length)
       hvac.setWifiLed(doc["wifiLed"].as<const char *>());
       wifi_ota.publishMQTT("esp01/hvac/log", "setwifiled");
     }
-    // if (doc["selfclean"].is<const char *>())
-    // {
-    //   hvac.setSelfclean(doc["selfclean"].as<const char *>());
-    //   wifi_ota.publishMQTT("esp01/hvac/log", "setselfclean");
-    // }
   }
 }
 
 void setup()
 {
-  // Serial.begin(9600);
+  Serial.begin(9600, SERIAL_8N1);
+  Serial.println("==Start==");
   wifi_ota.begin();
   wifi_ota.setupMQTT(mqtt_server, mqtt_port);
   wifi_ota.set_callback(mqtt_callback);
@@ -101,21 +91,9 @@ void loop()
   wifi_ota.handleMQTT();
   hvac.handleHvac();
 
-  // if ((hvac.isConnected() == true) && (hvac.getState() == "off")) {
-  //     hvac.applyPreset(myPreset);
-  // }
-
   static unsigned long lastLog = 0;
   if (millis() - lastLog > 4000)
   {
-    // wifi_ota.udpLog("HVAC connected: " + String(hvac.isConnected()) + "\n");
-    // wifi_ota.udpLog("HVAC state: " + String(hvac.getState()) + "\n");
-    // wifi_ota.udpLog("HVAC handshaked: " + String(hvac.isHandshaked()) + "\n");
-
-    // wifi_ota.publishMQTT("esp01/hvac/status",
-    //    "Connected: " + String(hvac.isConnected()) +
-    //    ", State: " + String(hvac.getState()) +
-    //    ", Handshaked: " + String(hvac.isHandshaked()));
     String payload1 = "{";
     payload1 += "\"connected\": ";
     payload1 += hvac.isConnected() ? "true" : "false";
@@ -125,9 +103,10 @@ void loop()
     payload1 += hvac.isHandshaked() ? "true" : "false";
     payload1 += "}";
 
-    wifi_ota.publishMQTT("esp01/hvac/status", payload1);
+    wifi_ota.publishMQTT("esp01/hvac/check", payload1);
 
     String payload2 = "{";
+    payload2 += "\"state\": \"" + String(hvac.getState()) + "\",";
     payload2 += "\"setpoint\": " + String(hvac.getSetpoint()) + ",";
     payload2 += "\"mode\": \"" + String(hvac.getMode()) + "\",";
     payload2 += "\"swing\": \"" + String(hvac.getSwing()) + "\",";
@@ -138,11 +117,7 @@ void loop()
     payload2 += "\"wifiLed\": \"" + String(hvac.getWifiLed()) + "\",";
     payload2 += "\"roomTemp\": " + String(hvac.getRoomTemperature()) + ",";
     payload2 += "\"outsideTemp\": " + String(hvac.getOutsideTemperature()) + ",";
-    // payload2 += "\"onTimer\": \"" + String(hvac.getOnTimer()) + "\",";
-    // payload2 += "\"offTimer\": \"" + String(hvac.getOffTimer()) + "\",";
     payload2 += "\"cdu\": \"" + String(hvac.isCduRunning()) + "\"";
-    //payload2 += "\"selfclean\": \"" + String(hvac.getSelfclean()) + "\"";
-    //payload2 += "\"debug_sc\": \"" + String(hvac.debug_selfcleaning) + "\"";
     payload2 += "}";
 
     wifi_ota.publishMQTT("esp01/hvac/status", payload2);
@@ -157,12 +132,5 @@ void loop()
     wifi_ota.publishMQTT("esp01/hvac/tocontrol", payload3);
     lastLog = millis();
   }
-
-  // static unsigned long lastLog1 = 0;
-  // if (millis() - lastLog1 > 10000)
-  // {
-  //   hvac.forceQueryAllData();
-  //   lastLog1 = millis();
-  // }
   delay(10);
 }
